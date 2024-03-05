@@ -12,8 +12,6 @@ app.use(cors())
 
 app.use(express.json());
 
-const PORT = 3001;
-
 app.post("/signup", async (req, res) => {
     const {name, email, password} = req.body;
     try {
@@ -26,7 +24,7 @@ app.post("/signup", async (req, res) => {
     }
 })
 
-app.listen(PORT, async () => {
+app.listen(process.env.PORT, async () => {
     try {
         await connection;
         console.log("Connected to DB");
@@ -34,5 +32,5 @@ app.listen(PORT, async () => {
         console.log("Error connecting to DB");
         console.log(error);
     }
-    console.log(`Listening on PORT ${PORT}`);
+    console.log(`Listening on PORT ${process.env.PORT}`);
 })
