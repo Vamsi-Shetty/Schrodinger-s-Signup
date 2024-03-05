@@ -34,7 +34,7 @@ const Signup = () => {
       try {
         let formData = {name, email, password} || localStorage;
         console.log(formData);
-        await axios.post('http://localhost:3001/signup', formData);
+        await axios.post('https://schrodinger-s-signup-rg57x8cd9-vamsi-shettys-projects.vercel.app', formData);
         alert("Signup Successful")
       } catch (error) {
         console.log(error);
